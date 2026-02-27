@@ -19,4 +19,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with: 
           folder: .vitepress/dist
+          repository-name: liuzuewi-go/liuzuwei-go.github.io
+          branch: main
           token: ${{ secrets.DEPLOY_TOKEN }}
+          single-commit: true
