@@ -1,0 +1,22 @@
+name: deploy blog to github pages
+on: 
+  push: 
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy: 
+    runs-on: ubuntu-latest
+    steps: 
+      - name: checkout
+        uses: actions/checkout@v6
+
+      - name: build
+        run: |
+          npm ci
+          npm run docs:build
+
+      - name: deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with: 
+          folder: src/.vitepress/dist
+          token: ${{ secrets.DEPLOY_TOKEN }}
