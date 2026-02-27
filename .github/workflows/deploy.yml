@@ -22,6 +22,5 @@ jobs:
         with: 
           folder: .vitepress/dist
           repository-name: liuzuwei-go/liuzuwei-go.github.io
-          branch: main
           token: ${{ secrets.DEPLOY_TOKEN }}
           single-commit: true
