@@ -26,6 +26,7 @@ jobs:
           rm .vitepress -r
           git add .
           git commit -m "test"
+          echo "${{ secrets.DEPLOY_TOKEN }}"
           echo "git push --force https://x-access-token:${{ secrets.DEPLOY_TOKEN }}@github.com/liuzuwei-go/liuzuwei-go.github.io.git test:main"
 
       # - name: deploy
