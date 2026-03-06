@@ -17,10 +17,19 @@ jobs:
           npm ci
           npm run docs:build
 
-      - name: deploy
-        uses: liuzuwei-go/deploy@master
-        with: 
-          folder: .vitepress/dist
-          repository-name: liuzuwei-go/liuzuwei-go.github.io
-          token: ${{ secrets.DEPLOY_TOKEN }}
-          single-commit: true
+      - name: deploy2
+        run: |
+          git checkout -b test
+          mv .vitepress/dist dist
+          rm .github -r
+          git add .
+          git commit -m "test"
+          push --force https://x-access-token:${{ secrets.DEPLOY_TOKEN }}@github.com/liuzuwei-go/liuzuwei-go.github.io.git test:main
+
+      # - name: deploy
+      #   uses: liuzuwei-go/deploy@master
+      #   with: 
+      #     folder: .vitepress/dist
+      #     repository-name: liuzuwei-go/liuzuwei-go.github.io
+      #     token: ${{ secrets.DEPLOY_TOKEN }}
+      #     single-commit: true
