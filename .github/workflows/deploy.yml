@@ -18,9 +18,8 @@ jobs:
           npm run docs:build
 
       - name: deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: liuzuwei-go/deploy
         with: 
-          branch: main
           folder: .vitepress/dist
           repository-name: liuzuwei-go/liuzuwei-go.github.io
           token: ${{ secrets.DEPLOY_TOKEN }}
