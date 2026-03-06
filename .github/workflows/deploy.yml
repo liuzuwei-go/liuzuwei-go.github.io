@@ -22,8 +22,8 @@ jobs:
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
           git checkout -b test
-          mv .vitepress/dist dist
           rm .github -r
+          rm .vitepress
           git add .
           git commit -m "test"
           push --force https://x-access-token:${{ secrets.DEPLOY_TOKEN }}@github.com/liuzuwei-go/liuzuwei-go.github.io.git test:main
