@@ -1,0 +1,1 @@
+import{W as e,n as t,nt as n}from"./chunks/framework.DOIlHpWA.js";var r=JSON.parse(`{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"index.md","filePath":"index.md"}`),i={name:`index.md`};function a(t,r,i,a,o,s){return n(),e(`div`)}var o=t(i,[[`render`,a]]);export{r as __pageData,o as default};
